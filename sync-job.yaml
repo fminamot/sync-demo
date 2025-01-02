@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  creationTimestamp: null
+  name: sync-job
+spec:
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - command:
+        - /bin/bash
+        - -c
+        - |
+          echo "*** PreSync is called ***"
+        image: registry.redhat.io/ose-cli:4.14
+        name: sync-job
+        resources: {}
+      restartPolicy: Never
+status: {}

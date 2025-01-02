@@ -1,0 +1,4 @@
+resources:
+- presync-job.yaml
+- mc.yaml
+- postsync-job.yaml

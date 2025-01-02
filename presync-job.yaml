@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  annotations:
+    argocd.argoproj.io/hook: PreSync
+    argocd.argoproj.io/sync-wave: "1"
+  name: presync-job
+spec:
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - command:
+        - /bin/bash
+        - -c
+        - |
+          echo "*** PreSync is called ***"
+        image: registry.redhat.io/ose-cli:4.14
+        name: presync-job
+        resources: {}
+      restartPolicy: Never
+status: {}
