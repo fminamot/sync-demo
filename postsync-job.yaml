@@ -16,7 +16,7 @@ spec:
         - -c
         - |
           echo "*** PostSync is called ***"
-        image: registry.redhat.io/ose-cli:v4.14
+        image: registry.redhat.io/openshift4/ose-cli:v4.14
         name: postsync-job
         resources: {}
       restartPolicy: Never
